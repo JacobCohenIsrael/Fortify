@@ -7,5 +7,10 @@ public class Attackable : MonoBehaviour
 	public void TakeDamage(int damageTaken)
 	{
 		HitPoints -= damageTaken;
+
+		if (HitPoints < 1)
+		{
+			Destroy(gameObject);
+		}
 	}
 }

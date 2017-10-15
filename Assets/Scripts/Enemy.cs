@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour {
 				}
 			}
 		}
-		//EnemyHealthSlider.value = GetComponent<Attackable>().HitPoints;
+		EnemyHealthSlider.value = GetComponent<Attackable>().HitPoints;
 	}
 	
 	private void OnCollisionEnter(Collision collision)
