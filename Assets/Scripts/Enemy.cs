@@ -15,6 +15,10 @@ public class Enemy : MonoBehaviour {
 
 	public float AttackSpeed = 1.0f;
 
+	public float HitRadius = 2.0f;
+
+	public SphereCollider HitCollider;
+
 	private bool _isAttacking = false;
 
 	private float _nextFireTime;
@@ -26,6 +30,7 @@ public class Enemy : MonoBehaviour {
 		CapsuleCollider collider = GetComponent<CapsuleCollider>();
 		collider.radius = AttackRadius;
 		_nextFireTime = 0.0f;
+		HitCollider.radius = HitRadius;
 	}
 	
 	private void Update ()
@@ -36,7 +41,11 @@ public class Enemy : MonoBehaviour {
 			transform.position = newPosition;
 		}
 
-		if (null != _target)
+		if (null == _target)
+		{
+			CheckWhatsInfront();
+		}
+		else
 		{
 			if (Time.time > _nextFireTime)
 			{
@@ -49,8 +58,6 @@ public class Enemy : MonoBehaviour {
 			}
 		}
 		EnemyHealthSlider.value = GetComponent<Attackable>().HitPoints;
-
-		CheckWhatsInfront();
 	}
 	
 //	private void OnCollisionEnter(Collision collision)

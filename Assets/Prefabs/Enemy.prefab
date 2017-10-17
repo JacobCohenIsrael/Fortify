@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 114383036329852676}
   - component: {fileID: 54008814466830928}
   - component: {fileID: 114958331789675698}
+  - component: {fileID: 135735600120837012}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -229,6 +230,8 @@ MonoBehaviour:
   AttackDamage: 2
   EnemyHealthSlider: {fileID: 114685444843783848}
   AttackSpeed: 1
+  HitRadius: 2
+  HitCollider: {fileID: 135735600120837012}
 --- !u!114 &114576286695618974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -353,6 +356,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!135 &135735600120837012
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1752464507417950}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136904762487187894
 CapsuleCollider:
   m_ObjectHideFlags: 1
