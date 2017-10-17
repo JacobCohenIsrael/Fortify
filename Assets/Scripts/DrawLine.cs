@@ -13,7 +13,7 @@ public class DrawLine : MonoBehaviour
 
 	public float HitForce;
 
-	private WaitForSeconds shotDuration = new WaitForSeconds(0.1f);
+	private WaitForSeconds shotDuration = new WaitForSeconds(.05f);
 
 	private float _nextFire;
 
@@ -24,7 +24,6 @@ public class DrawLine : MonoBehaviour
 	
 	public void Update()
 	{
-
 		if (Input.GetButtonDown("Fire1") && Time.time > _nextFire)
 		{
 			_nextFire = Time.time + FireRate;
@@ -48,7 +47,6 @@ public class DrawLine : MonoBehaviour
 				{
 					hit.rigidbody.AddForce(new Vector3(-hit.normal.x, 0, 0) * HitForce);
 				}
-				
 				LineOfSight.SetPosition(1, hit.point);
 			}
 
