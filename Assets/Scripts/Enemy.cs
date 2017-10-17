@@ -27,8 +27,6 @@ public class Enemy : MonoBehaviour {
 	
 	private void Start()
 	{
-		CapsuleCollider collider = GetComponent<CapsuleCollider>();
-		collider.radius = AttackRadius;
 		_nextFireTime = 0.0f;
 		HitCollider.radius = HitRadius;
 	}
@@ -37,8 +35,7 @@ public class Enemy : MonoBehaviour {
 	{
 		if (IsMoving)
 		{
-			var newPosition = new Vector3(transform.position.x + MovementSpeed * Time.deltaTime, transform.position.y, transform.position.z);
-			transform.position = newPosition;
+			transform.Translate(Vector3.right * Time.deltaTime * MovementSpeed, Camera.main.transform);
 		}
 
 		if (null == _target)
