@@ -49,18 +49,34 @@ public class Enemy : MonoBehaviour {
 			}
 		}
 		EnemyHealthSlider.value = GetComponent<Attackable>().HitPoints;
+
+		CheckWhatsInfront();
 	}
 	
-	private void OnCollisionEnter(Collision collision)
+//	private void OnCollisionEnter(Collision collision)
+//	{
+//		foreach (ContactPoint contact in collision.contacts)
+//		{
+//			if (contact.otherCollider.gameObject.tag.Equals("Base"))
+//			{
+//
+//			}
+//		}
+//	}
+
+	private void CheckWhatsInfront()
 	{
-		foreach (ContactPoint contact in collision.contacts)
+		RaycastHit objectHit;
+		Vector3 fwd = gameObject.transform.TransformDirection(Vector3.right);
+		Debug.DrawRay(gameObject.transform.position, fwd * AttackRadius, Color.green);
+		if (Physics.Raycast(gameObject.transform.position, fwd, out objectHit, AttackRadius))
 		{
-			if (contact.otherCollider.gameObject.tag.Equals("Base"))
+			//do something if hit object ie
+			if (objectHit.collider.tag=="Base")
 			{
 				IsMoving = false;
-				_target = contact.otherCollider.gameObject;
+				_target = objectHit.collider.gameObject;
 			}
 		}
 	}
-
 }

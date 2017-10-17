@@ -34,7 +34,7 @@ public class DrawLine : MonoBehaviour
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			LineOfSight.SetPosition(0, ShotOrigin.position);
 			
-			if (Physics.Raycast(ray, out hit))
+			if (Physics.SphereCast(ray, 0.5f, out hit))
 			{
 				Attackable attackable = hit.collider.GetComponent<Attackable>();
 
@@ -46,8 +46,13 @@ public class DrawLine : MonoBehaviour
 				if (null != hit.rigidbody)
 				{
 					hit.rigidbody.AddForce(new Vector3(-hit.normal.x, 0, 0) * HitForce);
+					LineOfSight.SetPosition(1, hit.point);
 				}
-				LineOfSight.SetPosition(1, hit.point);
+				else
+				{
+					LineOfSight.SetPosition(1, hit.point + new Vector3(0.0f, 0.5f, 0.0f));
+				}
+				
 			}
 
 		}
