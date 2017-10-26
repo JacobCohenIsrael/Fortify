@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: 4294829851913244}
   - component: {fileID: 33147431614507938}
   - component: {fileID: 23404484820933944}
-  - component: {fileID: 95055713885493158}
   m_Layer: 8
   m_Name: Hand
   m_TagString: Untagged
@@ -128,6 +127,7 @@ GameObject:
   - component: {fileID: 54008814466830928}
   - component: {fileID: 114958331789675698}
   - component: {fileID: 135735600120837012}
+  - component: {fileID: 95784855514621740}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -331,16 +331,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 88
   m_CollisionDetection: 0
---- !u!95 &95055713885493158
+--- !u!95 &95784855514621740
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1209003717854472}
+  m_GameObject: {fileID: 1752464507417950}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 04d9f4f674774486a83e056d47477b49, type: 2}
+  m_Controller: {fileID: 9100000, guid: 024f42a9d145943c89346fd16d58d917, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

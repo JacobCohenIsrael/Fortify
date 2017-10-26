@@ -25,10 +25,13 @@ public class Enemy : MonoBehaviour {
 
 	private GameObject _target;
 	
+	private Animator enemyAnimator;
+	
 	private void Start()
 	{
 		_nextFireTime = 0.0f;
 		HitCollider.radius = HitRadius;
+		enemyAnimator = GetComponent<Animator>();
 	}
 	
 	private void Update ()
@@ -80,6 +83,7 @@ public class Enemy : MonoBehaviour {
 			{
 				IsMoving = false;
 				_target = objectHit.collider.gameObject;
+				enemyAnimator.SetBool("isAttacking", true);
 			}
 		}
 	}
