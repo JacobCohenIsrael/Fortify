@@ -21,6 +21,8 @@ public class Enemy : MonoBehaviour {
 
 	public SphereCollider HitCollider;
 
+	public int ScoreValue = 10;
+
 	private bool _isAttacking = false;
 
 	private float _nextFireTime;
@@ -71,17 +73,6 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 	
-//	private void OnCollisionEnter(Collision collision)
-//	{
-//		foreach (ContactPoint contact in collision.contacts)
-//		{
-//			if (contact.otherCollider.gameObject.tag.Equals("Base"))
-//			{
-//
-//			}
-//		}
-//	}
-
 	private void CheckWhatsInfront()
 	{
 		RaycastHit objectHit;
@@ -102,6 +93,7 @@ public class Enemy : MonoBehaviour {
 	private IEnumerator Die()
 	{
 		yield return new WaitForSeconds(1.5f);
+		ScoreManager.Score += ScoreValue;
 		Destroy(gameObject);
 	}
 }

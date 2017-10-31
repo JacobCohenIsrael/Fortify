@@ -493,8 +493,9 @@ MonoBehaviour:
   AttackDamage: 2
   EnemyHealthSlider: {fileID: 114685444843783848}
   AttackSpeed: 1
-  HitRadius: 2
+  HitRadius: 1.25
   HitCollider: {fileID: 135735600120837012}
+  ScoreValue: 10
 --- !u!114 &114576286695618974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -629,7 +630,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 1.25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136855009277961812
 CapsuleCollider:
