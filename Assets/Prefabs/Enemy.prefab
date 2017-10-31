@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4392816065016636}
   - component: {fileID: 33846373963407692}
-  - component: {fileID: 135230941614632002}
   - component: {fileID: 23862723340880256}
   m_Layer: 8
   m_Name: Head
@@ -38,7 +37,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4058558591659314}
   - component: {fileID: 33390991116007204}
-  - component: {fileID: 136748347039968442}
   - component: {fileID: 23661805950092986}
   m_Layer: 8
   m_Name: Body
@@ -161,6 +159,7 @@ GameObject:
   - component: {fileID: 114958331789675698}
   - component: {fileID: 135735600120837012}
   - component: {fileID: 95784855514621740}
+  - component: {fileID: 136855009277961812}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -246,8 +245,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1752464507417950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4058558591659314}
   - {fileID: 224464578093825064}
@@ -620,18 +619,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!135 &135230941614632002
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1152353127467820}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135735600120837012
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -644,16 +631,16 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &136748347039968442
+--- !u!136 &136855009277961812
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1193353244193430}
+  m_GameObject: {fileID: 1752464507417950}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.25
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}

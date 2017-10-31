@@ -1,4 +1,6 @@
-﻿﻿using UnityEngine;
+﻿﻿using System.Collections;
+ using System.Collections.Generic;
+ using UnityEngine;
 using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour {
@@ -25,17 +27,20 @@ public class Enemy : MonoBehaviour {
 
 	private GameObject _target;
 	
-	private Animator enemyAnimator;
+	private Animator _enemyAnimator;
+
+	private Attackable _attackable;
 	
 	private void Start()
 	{
 		_nextFireTime = 0.0f;
 		HitCollider.radius = HitRadius;
-		enemyAnimator = GetComponent<Animator>();
+		_enemyAnimator = GetComponent<Animator>();
+		_attackable = GetComponent<Attackable>();
 	}
 	
 	private void Update ()
-	{
+	{	
 		if (IsMoving)
 		{
 			transform.Translate(Vector3.right * Time.deltaTime * MovementSpeed, Camera.main.transform);
@@ -58,6 +63,12 @@ public class Enemy : MonoBehaviour {
 			}
 		}
 		EnemyHealthSlider.value = GetComponent<Attackable>().HitPoints;
+		if (_attackable.HitPoints < 1)
+		{
+			IsMoving = false;
+			StartCoroutine(Die());
+			
+		}
 	}
 	
 //	private void OnCollisionEnter(Collision collision)
@@ -83,8 +94,14 @@ public class Enemy : MonoBehaviour {
 			{
 				IsMoving = false;
 				_target = objectHit.collider.gameObject;
-				enemyAnimator.SetBool("isAttacking", true);
+				_enemyAnimator.SetBool("isAttacking", true);
 			}
 		}
+	}
+
+	private IEnumerator Die()
+	{
+		yield return new WaitForSeconds(1.5f);
+		Destroy(gameObject);
 	}
 }
