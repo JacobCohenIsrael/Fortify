@@ -11,7 +11,10 @@ public class Attackable : MonoBehaviour
 		if (HitPoints < 1)
 		{
             var animator = GetComponent<Animator>();
-            animator.SetTrigger("isDead");
+			if (null != animator)
+			{
+            	animator.SetTrigger("isDead");
+			}
 		}
 	}
 }
