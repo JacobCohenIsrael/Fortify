@@ -8,6 +8,13 @@ public class EnemyHealth : Attackable
 		if (null != animator)
 		{
 			animator.SetTrigger("isDead");
+			isDead = true;
 		}
+		var enemy = GetComponent<Enemy>();
+		if (null != enemy)
+		{
+			ScoreManager.Score += enemy.ScoreValue;
+		}
+		Destroy(gameObject, 2.0f);
 	}
 }

@@ -71,8 +71,6 @@ public class Enemy : MonoBehaviour {
 		if (_attackable.HitPoints < 1)
 		{
 			IsMoving = false;
-			StartCoroutine(Die());
-			
 		}
 	}
 	
@@ -91,12 +89,5 @@ public class Enemy : MonoBehaviour {
 				_enemyAnimator.SetBool("isAttacking", true);
 			}
 		}
-	}
-
-	private IEnumerator Die()
-	{
-		yield return new WaitForSeconds(1.5f);
-		ScoreManager.Score += ScoreValue;
-		Destroy(gameObject);
 	}
 }

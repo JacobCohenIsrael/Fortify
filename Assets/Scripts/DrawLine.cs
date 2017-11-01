@@ -4,6 +4,8 @@ using UnityEngine;
 public class DrawLine : MonoBehaviour
 {
 	public LineRenderer LineOfSight;
+
+	public Light GunLight;
  
 	public Transform ShotOrigin;
 
@@ -63,8 +65,10 @@ public class DrawLine : MonoBehaviour
 	private IEnumerator shotEffect()
 	{
 		LineOfSight.enabled = true;
+		GunLight.enabled = true;
 		yield return shotDuration;
 		LineOfSight.enabled = false;
+		GunLight.enabled = false;
 	}
      
 }
