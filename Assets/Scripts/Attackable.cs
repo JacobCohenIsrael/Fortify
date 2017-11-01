@@ -1,6 +1,6 @@
-﻿﻿using UnityEngine;
+﻿using UnityEngine;
 
-public class Attackable : MonoBehaviour
+public abstract class Attackable : MonoBehaviour
 {
 	public int HitPoints = 100;
 	
@@ -10,11 +10,9 @@ public class Attackable : MonoBehaviour
 
 		if (HitPoints < 1)
 		{
-            var animator = GetComponent<Animator>();
-			if (null != animator)
-			{
-            	animator.SetTrigger("isDead");
-			}
+			Die();
 		}
 	}
+
+	protected abstract void Die();
 }

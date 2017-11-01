@@ -32,6 +32,8 @@ public class Enemy : MonoBehaviour {
 	private Animator _enemyAnimator;
 
 	private Attackable _attackable;
+
+	private Rigidbody _rigidbody;
 	
 	private void Start()
 	{
@@ -39,13 +41,14 @@ public class Enemy : MonoBehaviour {
 		HitCollider.radius = HitRadius;
 		_enemyAnimator = GetComponent<Animator>();
 		_attackable = GetComponent<Attackable>();
+		_rigidbody = GetComponent<Rigidbody>();
 	}
 	
 	private void Update ()
 	{	
 		if (IsMoving)
 		{
-			transform.Translate(Vector3.right * Time.deltaTime * MovementSpeed, Camera.main.transform);
+			_rigidbody.MovePosition(transform.position + transform.right * MovementSpeed * Time.deltaTime);
 		}
 
 		if (null == _target)

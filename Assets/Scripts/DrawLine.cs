@@ -13,6 +13,8 @@ public class DrawLine : MonoBehaviour
 
 	public float HitForce;
 
+	public GameObject HitEffect;
+
 	private WaitForSeconds shotDuration = new WaitForSeconds(.05f);
 
 	private float _nextFire;
@@ -42,12 +44,17 @@ public class DrawLine : MonoBehaviour
 				{
 					attackable.TakeDamage(GunDamage);
 				}
+				else
+				{
+					Instantiate(HitEffect, hit.point + new Vector3(0, 0.1f, 0), Quaternion.identity);
+				}
 
 				if (null != hit.rigidbody)
 				{
 					hit.rigidbody.AddForce(new Vector3(-hit.normal.x, 0, 0) * HitForce);
 				}
 				LineOfSight.SetPosition(1, hit.point);
+				
 			}
 
 		}

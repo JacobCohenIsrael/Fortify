@@ -156,10 +156,10 @@ GameObject:
   - component: {fileID: 4803669497903238}
   - component: {fileID: 114383036329852676}
   - component: {fileID: 54008814466830928}
-  - component: {fileID: 114958331789675698}
   - component: {fileID: 135735600120837012}
   - component: {fileID: 95784855514621740}
   - component: {fileID: 136855009277961812}
+  - component: {fileID: 114744669164038614}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -430,7 +430,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 88
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!95 &95784855514621740
 Animator:
@@ -560,7 +560,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114958331789675698
+--- !u!114 &114744669164038614
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -568,7 +568,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1752464507417950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c43f7f561d40504dae82737f0efa66c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1035334371ac943049e083ba2fff8812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HitPoints: 100
