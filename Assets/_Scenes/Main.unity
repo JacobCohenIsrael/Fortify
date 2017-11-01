@@ -7536,8 +7536,9 @@ MonoBehaviour:
   LineOfSight: {fileID: 886426858}
   GunLight: {fileID: 886426860}
   ShotOrigin: {fileID: 886426857}
-  FireRate: 0.01
+  FireRate: 0.15
   GunDamage: 50
+  BulletSpeed: 50
   HitForce: 10
   HitEffect: {fileID: 1671558862405174, guid: ccf16bcfe58144781b2ef1133337fe9e, type: 2}
 --- !u!108 &886426860

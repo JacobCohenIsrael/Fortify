@@ -13,13 +13,17 @@ public class DrawLine : MonoBehaviour
 
 	public int GunDamage;
 
+	public int BulletSpeed = 5;
+
 	public float HitForce;
 
 	public GameObject HitEffect;
 
-	private WaitForSeconds shotDuration = new WaitForSeconds(.05f);
+	private WaitForSeconds shotDuration = new WaitForSeconds(0.1f);
 
 	private float _nextFire;
+
+	private Vector3 _bulletDestination;
 
 	private void Start()
 	{
@@ -37,6 +41,7 @@ public class DrawLine : MonoBehaviour
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			LineOfSight.SetPosition(0, ShotOrigin.position);
+			LineOfSight.SetPosition(1, ShotOrigin.position);
 			
 			if (Physics.Raycast(ray, out hit))
 			{
@@ -55,10 +60,15 @@ public class DrawLine : MonoBehaviour
 				{
 					hit.rigidbody.AddForce(new Vector3(-hit.normal.x, 0, 0) * HitForce);
 				}
-				LineOfSight.SetPosition(1, hit.point);
+				_bulletDestination = hit.point;
 				
 			}
 
+		}
+		else
+		{
+			LineOfSight.SetPosition(0, Vector3.Lerp(LineOfSight.GetPosition(0), LineOfSight.GetPosition(1), Time.deltaTime * BulletSpeed * 0.9f ));
+			LineOfSight.SetPosition(1, Vector3.Lerp(LineOfSight.GetPosition(1), _bulletDestination, Time.deltaTime * BulletSpeed ));
 		}
 	}
 
