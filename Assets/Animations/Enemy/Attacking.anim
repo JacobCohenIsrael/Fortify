@@ -23,27 +23,33 @@ AnimationClip:
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
       - serializedVersion: 2
-        time: 0.5
-        value: {x: 0, y: 0, z: 18.180094}
-        inSlope: {x: 0, y: 0, z: 51.33203}
-        outSlope: {x: 0, y: 0, z: 51.33203}
+        time: 0.7
+        value: {x: -24.880568, y: 51.82154, z: 59.23555}
+        inSlope: {x: -29.834318, y: 0, z: 29.866676}
+        outSlope: {x: -29.834318, y: 0, z: 29.866676}
         tangentMode: 0
       - serializedVersion: 2
-        time: 0.9
-        value: {x: 0, y: 0, z: 31.184206}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
+        time: 0.75
+        value: {x: -26.194038, y: 46.871796, z: 60}
+        inSlope: {x: -22.494015, y: -185.61534, z: 0}
+        outSlope: {x: -22.494015, y: -185.61534, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.81666666
+        value: {x: -27.314392, y: 29.364372, z: 46.844444}
+        inSlope: {x: -10.742432, y: -317.60858, z: -351.99997}
+        outSlope: {x: -10.742432, y: -317.60858, z: -351.99997}
         tangentMode: 0
       - serializedVersion: 2
         time: 1
-        value: {x: 0, y: 0, z: 0}
+        value: {x: -30, y: -15, z: -15}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Body/Hand
+    path: Humanoid/Hand
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
@@ -56,7 +62,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 2851550143
+      path: 80896242
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -94,14 +100,14 @@ AnimationClip:
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
-        time: 0.5
-        value: 0
-        inSlope: 0
-        outSlope: 0
+        time: 0.81666666
+        value: -27.314392
+        inSlope: -10.742432
+        outSlope: -10.742432
         tangentMode: 136
       - serializedVersion: 2
         time: 1
-        value: 0
+        value: -30
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -109,7 +115,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Body/Hand
+    path: Humanoid/Hand
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -122,14 +128,14 @@ AnimationClip:
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
-        time: 0.5
-        value: 0
+        time: 0.7
+        value: 51.82154
         inSlope: 0
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
         time: 1
-        value: 0
+        value: -15
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -137,7 +143,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Body/Hand
+    path: Humanoid/Hand
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -150,14 +156,14 @@ AnimationClip:
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
-        time: 0.9
-        value: 31.184206
+        time: 0.75
+        value: 60
         inSlope: 0
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
         time: 1
-        value: 0
+        value: -15
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -165,7 +171,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Body/Hand
+    path: Humanoid/Hand
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves:
@@ -176,7 +182,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Body/Hand
+    path: Humanoid/Hand
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -186,7 +192,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Body/Hand
+    path: Humanoid/Hand
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -196,7 +202,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Body/Hand
+    path: Humanoid/Hand
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0
