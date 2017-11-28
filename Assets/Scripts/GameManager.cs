@@ -8,14 +8,13 @@ public class GameManager : MonoBehaviour
 
 	private void Start()
 	{
-		InvokeRepeating("spawnEnemy", 0.5f, 2.5f);
+		InvokeRepeating("spawnEnemy", 0.5f, 3.5f);
 	}
 
 	private void spawnEnemy()
 	{
-		foreach (var enemySpawnPoint in EnemySpawnPoints)
-		{
-			Instantiate(EnemyPrefab, enemySpawnPoint);
-		}
+
+		var enemySpawnPoint = Random.Range(1, 3);
+		Instantiate(EnemyPrefab, EnemySpawnPoints[enemySpawnPoint]);
 	}
 }

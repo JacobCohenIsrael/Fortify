@@ -77,9 +77,10 @@ public class Enemy : MonoBehaviour {
 	private void CheckWhatsInfront()
 	{
 		RaycastHit objectHit;
+		int layerMask = LayerMask.GetMask("Base");
 		Vector3 fwd = gameObject.transform.TransformDirection(Vector3.right);
 		Debug.DrawRay(gameObject.transform.position, fwd * AttackRadius, Color.green);
-		if (Physics.Raycast(gameObject.transform.position, fwd, out objectHit, AttackRadius))
+		if (Physics.Raycast(gameObject.transform.position, fwd, out objectHit, AttackRadius, layerMask))
 		{
 			//do something if hit object ie
 			if (objectHit.collider.tag=="Base")
